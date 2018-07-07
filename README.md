@@ -3,8 +3,6 @@
 |Column|Type|Options|
 |------|----|------|
 |name|string|null: false, index: true|
-|email|string|null: false|
-|password|string|null: false|
 
 ### Association
 - has_many :messages
@@ -28,9 +26,9 @@
 
 |Column|Type|Options|
 |------|----|------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, forein_keys: true|
-|body|text|null: false|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, forein_keys: true|
+|body|text||
 |image|text||
 |created_at|timestamps|null: false|
 
@@ -44,8 +42,8 @@
 
 |Column|Type|Options|
 |------|----|------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 
 ### Association
