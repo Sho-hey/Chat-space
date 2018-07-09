@@ -1,0 +1,206 @@
+body {
+  height: 100vh;
+  width: 100vw;
+
+  .flash-message {
+    background-color: #38AEF0;
+    width: 100vw;
+    height: 20px;
+    &_text {
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 10px;
+      line-height: 20px;
+    }
+  }
+
+  .contents{
+    height: calc(100vh - 20px);
+    width: 100vw;
+    position: relative;
+    .left-contents {
+      height: calc(100vh - 20px);
+      width: 300px;
+      background-color: #2f3e51;
+      &__top {
+        background-color: #253141;
+        width: 260px;
+        height: 110px;
+        padding: 0px 20px;
+        position: relative;
+        border-bottom: 1px solid #eeeeee;
+        &_text {
+          color: #FFFFFF;
+          font-size: 16px;
+          line-height: 110px;
+          font-weight: bold;
+          float:left;
+        }
+        &_i.far.fa-edit {
+          color: #FFFFFF;
+          position: absolute;
+          top: 45px;
+          right: 45px;
+        }
+        &_i.fas.fa-cog {
+          color: #FFFFFF;
+          position: absolute;
+          top: 45px;
+          right: 20px;
+        }
+      }
+      &__bottom {
+        padding: 0px 20px;
+        &_box1{
+          height: 20px;
+        }
+        &_text1 {
+          color: #FFFFFF;
+          font-size: 15px;
+        }
+        &_box2 {
+          height: 5px;
+        }
+        &_text2 {
+          color: #FFFFFF;
+          font-size: 11px;
+        }
+        &_box3 {
+          height: 40px;
+        }
+      }
+    }
+    .right-contents {
+      height: calc(100vh - 20px);
+      width: calc(100vw - 300px);
+      background-color: #AAAAAA;
+      position: absolute;
+      top: 0;
+      left: 300px;
+      &__top {
+        height: 110px;
+        width: calc(100vw - 380px);
+        padding: 0px 40px;
+        background-color: white;
+        border-bottom: 1px solid #eeeeee;
+        position: relative;
+        &_box1 {
+          height: 35px;
+        }
+        &_text1 {
+          font-size: 20px;
+          color: #333333;
+        }
+        &_edit{
+          border: solid #38AEF0 2px;
+          color: #38AEF0;
+          position: absolute;
+          top: 28px;
+          right: 40px;
+          font-size: 15px;
+          padding: 0px 20px;
+          height: 40px;
+          line-height: 40px;
+        }
+        &_box2 {
+          height: 15px;
+        }
+        &_text2 {
+          font-size: 12px;
+          color: #999999;
+        }
+      }
+      &__center {
+        width: calc(100vw - 380px);
+        height: calc(100vh - 130px);
+        padding: 0px 40px;
+        &_box1 {
+          height: 46px;
+        }
+        &_text1 {
+          font-size: 16px;
+          color: #434A54;
+          font-weight: bold;
+          display: inline-block;
+          padding-right: 10px;
+        }
+        &_day {
+          font-size: 12px;
+          color: #999999;
+          display: inline-block;
+        }
+        &_box2 {
+          height: 10px;
+        }
+        &_text2 {
+          font-size: 14px;
+          color: #434A54;
+        }
+        &_box3 {
+          height: 40px;
+        }
+      }
+      &__bottom {
+        height: 90px;
+        width: calc(100vw - 380px);
+        padding: 0px 40px;
+        background-color: red;
+        position: absolute;
+        bottom: 0;
+        position: fixed;
+        &_textbox {
+          width: 930px;
+          height: 50px;
+          background-color: white;
+          position: absolute;
+          top: 20px;
+          padding: 0px 10px;
+          &_text{
+            color: #434A54;
+            font-size: 16px;
+            line-height: 50px;
+          }
+          &_i.far.fa-image {
+            color: black;
+            position: absolute;
+            top: 20px;
+            right: 10px;
+          }
+        }
+        &_send {
+          color: white;
+          background-color: #38AEF0;
+          height: 50px;
+          position: absolute;
+          top: 20px;
+          right: 40px;
+          font-size: 17px;
+          line-height: 50px;
+          padding: 0px 25px;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
