@@ -3,7 +3,7 @@
   width: 100vw;
   height: 20px;
   &_text {
-    color: #FFFFFF;
+    color: $white;
     text-align: center;
     font-size: 10px;
     line-height: 20px;
@@ -26,20 +26,20 @@
       position: relative;
       border-bottom: 1px solid #eeeeee;
       &_user-name {
-        color: #FFFFFF;
+        color: $white;
         font-size: 16px;
         line-height: 110px;
         font-weight: bold;
         float:left;
       }
       &_icon.far.fa-edit {
-        color: #FFFFFF;
+        color: $white;
         position: absolute;
         top: 45px;
         right: 45px;
       }
       &_icon.fas.fa-cog {
-        color: #FFFFFF;
+        color: $white;
         position: absolute;
         top: 45px;
         right: 20px;
@@ -52,14 +52,14 @@
           height: 20px;
         }
         &_group-name {
-          color: #FFFFFF;
+          color: $white;
           font-size: 15px;
         }
         &_center-box {
           height: 5px;
         }
         &_message {
-          color: #FFFFFF;
+          color: $white;
           font-size: 11px;
         }
         &_bottom-box {
@@ -118,7 +118,7 @@
       .message__unity{
         &_user-name {
           font-size: 16px;
-          color: #434A54;
+          color: $chat-font-color;
           font-weight: bold;
           display: inline-block;
           padding-right: 10px;
@@ -133,7 +133,7 @@
         }
         &_message {
           font-size: 14px;
-          color: #434A54;
+          color: $chat-font-color;
         }
         &_bottom-box {
           height: 40px;
@@ -156,7 +156,7 @@
         top: 20px;
         padding: 0px 10px;
         &_message {
-          color: #434A54;
+          color: $chat-font-color;
           font-size: 16px;
           line-height: 50px;
         }
