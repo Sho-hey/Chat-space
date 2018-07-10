@@ -29,20 +29,20 @@ body {
         padding: 0px 20px;
         position: relative;
         border-bottom: 1px solid #eeeeee;
-        &_text {
+        &_user-name {
           color: #FFFFFF;
           font-size: 16px;
           line-height: 110px;
           font-weight: bold;
           float:left;
         }
-        &_i.far.fa-edit {
+        &_icon.far.fa-edit {
           color: #FFFFFF;
           position: absolute;
           top: 45px;
           right: 45px;
         }
-        &_i.fas.fa-cog {
+        &_icon.fas.fa-cog {
           color: #FFFFFF;
           position: absolute;
           top: 45px;
@@ -51,22 +51,24 @@ body {
       }
       &__bottom {
         padding: 0px 20px;
-        &_box1{
-          height: 20px;
-        }
-        &_text1 {
-          color: #FFFFFF;
-          font-size: 15px;
-        }
-        &_box2 {
-          height: 5px;
-        }
-        &_text2 {
-          color: #FFFFFF;
-          font-size: 11px;
-        }
-        &_box3 {
-          height: 40px;
+        &__unity{
+          &_top-box{
+            height: 20px;
+          }
+          &_group-name {
+            color: #FFFFFF;
+            font-size: 15px;
+          }
+          &_center-box {
+            height: 5px;
+          }
+          &_message {
+            color: #FFFFFF;
+            font-size: 11px;
+          }
+          &_bottom-box {
+            height: 40px;
+          }
         }
       }
     }
@@ -84,14 +86,14 @@ body {
         background-color: white;
         border-bottom: 1px solid #eeeeee;
         position: relative;
-        &_box1 {
+        &_top-box {
           height: 35px;
         }
-        &_text1 {
+        &_group-name {
           font-size: 20px;
           color: #333333;
         }
-        &_edit{
+        &_edit-button {
           border: solid #38AEF0 2px;
           color: #38AEF0;
           position: absolute;
@@ -102,10 +104,10 @@ body {
           height: 40px;
           line-height: 40px;
         }
-        &_box2 {
+        &_center-box {
           height: 15px;
         }
-        &_text2 {
+        &_member-name {
           font-size: 12px;
           color: #999999;
         }
@@ -114,30 +116,32 @@ body {
         width: calc(100vw - 380px);
         height: calc(100vh - 130px);
         padding: 0px 40px;
-        &_box1 {
+        &_top-box {
           height: 46px;
         }
-        &_text1 {
-          font-size: 16px;
-          color: #434A54;
-          font-weight: bold;
-          display: inline-block;
-          padding-right: 10px;
-        }
-        &_day {
-          font-size: 12px;
-          color: #999999;
-          display: inline-block;
-        }
-        &_box2 {
-          height: 10px;
-        }
-        &_text2 {
-          font-size: 14px;
-          color: #434A54;
-        }
-        &_box3 {
-          height: 40px;
+        &__unity{
+          &_user-name {
+            font-size: 16px;
+            color: #434A54;
+            font-weight: bold;
+            display: inline-block;
+            padding-right: 10px;
+          }
+          &_day {
+            font-size: 12px;
+            color: #999999;
+            display: inline-block;
+          }
+          &_center-box {
+            height: 10px;
+          }
+          &_message {
+            font-size: 14px;
+            color: #434A54;
+          }
+          &_bottom-box {
+            height: 40px;
+          }
         }
       }
       &__bottom {
@@ -155,19 +159,19 @@ body {
           position: absolute;
           top: 20px;
           padding: 0px 10px;
-          &_text{
+          &_message {
             color: #434A54;
             font-size: 16px;
             line-height: 50px;
           }
-          &_i.far.fa-image {
+          &_icon.far.fa-image {
             color: black;
             position: absolute;
             top: 20px;
             right: 10px;
           }
         }
-        &_send {
+        &_send-button {
           color: white;
           background-color: #38AEF0;
           height: 50px;
