@@ -1,0 +1,24 @@
+-# !!!
+-# %html
+-#   %head
+-#     %meta{:content =&gt; "text/html; charset=UTF-8", "http-equiv" =&gt; "Content-Type"}/
+-#     %title ChatSpace
+-#     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' =&gt; true
+-#     = javascript_include_tag 'application', 'data-turbolinks-track' =&gt; true
+-#     = csrf_meta_tags
+-#   %body
+-#     = render partial: 'layouts/flash'
+-#     = yield
+
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ChatSpace
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{href: "https://use.fontawesome.com/releases/v5.0.6/css/all.css", rel: "stylesheet"}/
+  %body
+    -# = render 'layouts/notifications'
+    = yield
