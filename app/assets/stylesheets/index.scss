@@ -1,0 +1,177 @@
+.contents{
+  height: calc(100vh - 20px);
+  width: 100vw;
+  position: relative;
+  .side-bar {
+    height: calc(100vh - 20px);
+    width: 300px;
+    background-color: #2f3e51;
+    &__user {
+      background-color: #253141;
+      width: 260px;
+      height: 110px;
+      padding: 0px 20px;
+      position: relative;
+      border-bottom: 1px solid #eeeeee;
+      &_user-name {
+        color: $white;
+        font-size: 16px;
+        line-height: 110px;
+        font-weight: bold;
+        float:left;
+      }
+      &_icon-edit {
+        position: absolute;
+        top: 45px;
+        right: 45px;
+        .fa.fa-cog.icon{
+          color: $white;
+        }
+      }
+      &_icon-cog {
+        position: absolute;
+        top: 45px;
+        right: 20px;
+        .fa.fa-pencil-square-o.icon{
+          color: $white;
+        }
+      }
+    }
+    &__group {
+      padding: 0px 20px;
+      height: 100vh;
+      .group__unity{
+        &_top-box{
+          height: 20px;
+        }
+        &_group-name {
+          color: $white;
+          font-size: 15px;
+        }
+        &_center-box {
+          height: 5px;
+        }
+        &_message {
+          color: $white;
+          font-size: 11px;
+        }
+        &_bottom-box {
+          height: 40px;
+        }
+      }
+    }
+  }
+  .right-contents {
+    height: calc(100vh - 20px);
+    width: calc(100vw - 300px);
+    background-color: #AAAAAA;
+    position: absolute;
+    top: 0;
+    left: 300px;
+    .header {
+      height: 110px;
+      width: calc(100vw - 380px);
+      padding: 0px 40px;
+      background-color: white;
+      border-bottom: 1px solid #eeeeee;
+      position: relative;
+      &_top-box {
+        height: 35px;
+      }
+      &_group-name {
+        font-size: 20px;
+        color: #333333;
+      }
+      &_edit-button {
+        border: solid $light-blue 2px;
+        color: #38AEF0;
+        position: absolute;
+        top: 28px;
+        right: 40px;
+        font-size: 15px;
+        padding: 0px 20px;
+        height: 40px;
+        line-height: 40px;
+      }
+      &_center-box {
+        height: 15px;
+      }
+      &_member-name {
+        font-size: 12px;
+        color: #999999;
+      }
+    }
+    .main {
+      width: calc(100vw - 380px);
+      height: 100vh;
+      padding: 0px 40px;
+      &_top-box {
+        height: 46px;
+      }
+      .message__unity{
+        &_user-name {
+          font-size: 16px;
+          color: $chat-font-color;
+          font-weight: bold;
+          display: inline-block;
+          padding-right: 10px;
+        }
+        &__day {
+          font-size: 12px;
+          color: #999999;
+          display: inline-block;
+        }
+        &_center-box {
+          height: 10px;
+        }
+        &_message {
+          font-size: 14px;
+          color: $chat-font-color;
+        }
+        &_bottom-box {
+          height: 40px;
+        }
+      }
+    }
+    .form {
+      height: 90px;
+      width: calc(100vw - 380px);
+      padding: 0px 40px;
+      background-color: gray;
+      position: absolute;
+      bottom: 0;
+      position: fixed;
+      &_textbox {
+        width: 930px;
+        height: 50px;
+        background-color: white;
+        position: absolute;
+        top: 20px;
+        padding: 0px 10px;
+        &_message {
+          color: $chat-font-color;
+          font-size: 16px;
+          line-height: 50px;
+        }
+        &_icon.far.fa-image {
+          color: black;
+          position: absolute;
+          top: 20px;
+          right: 10px;
+        }
+      }
+      &_send-button {
+        color: white;
+        background-color: $light-blue;
+        height: 50px;
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 17px;
+        line-height: 50px;
+        padding: 0px 25px;
+        margin-left: 15px;
+      }
+    }
+  }
+}

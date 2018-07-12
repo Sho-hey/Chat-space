@@ -1,0 +1,17 @@
+.contents
+  = render partial: "side-bar"
+  .right-contents
+    .header
+      .header_top-box
+      .header_group-name sampleグループ
+      .header_edit-button Edit
+      .header_center-box
+      .header_member-name Members:sample,sample
+    .main
+      .main_top-box
+      = render partial: "message-unity"
+    .form
+      .form_textbox
+        .form_textbox_message sample-text
+        .form_textbox_icon.far.fa-image
+      .form_send-button Send
