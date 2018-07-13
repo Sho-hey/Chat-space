@@ -22,6 +22,7 @@ class GroupsController < ApplicationController
     else
       render :edit
     end
+  end
 
   private
   def group_params
