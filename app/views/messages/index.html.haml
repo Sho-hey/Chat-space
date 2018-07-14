@@ -9,7 +9,7 @@
       .header_member-name Members:sample,sample
     .main
       .main_top-box
-      = render partial: "message-unity"
+      = render @messages
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :body, class: 'form_textbox', placeholder: 'type a message'

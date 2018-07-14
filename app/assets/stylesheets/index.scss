@@ -40,7 +40,7 @@
     &__group {
       padding: 0px 20px;
       height: 100vh;
-      .group__unity{
+      .group{
         &_top-box{
           height: 20px;
         }
@@ -108,7 +108,7 @@
       &_top-box {
         height: 46px;
       }
-      .message__unity{
+      .message{
         &_user-name {
           font-size: 16px;
           color: $chat-font-color;
@@ -127,6 +127,10 @@
         &_message {
           font-size: 14px;
           color: $chat-font-color;
+          .message__image{
+            height: 200px;
+            width: 200px;
+          }
         }
         &_bottom-box {
           height: 40px;
