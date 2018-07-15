@@ -3,10 +3,13 @@
   .right-contents
     .header
       .header_top-box
-      .header_group-name sampleグループ
+      .header_group-name
+        = @group.name
       .header_edit-button Edit
       .header_center-box
-      .header_member-name Members:sample,sample
+      .header_member-name
+        Member：
+        = @users.pluck(:name).join(", ")
     .main
       .main_top-box
       = render @messages
