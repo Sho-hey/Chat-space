@@ -3,15 +3,20 @@
   .right-contents
     .header
       .header_top-box
-      .header_group-name sampleグループ
+      .header_group-name
+        = @group.name
       .header_edit-button Edit
       .header_center-box
-      .header_member-name Members:sample,sample
+      .header_member-name
+        Member：
+        = @users.pluck(:name).join(", ")
     .main
       .main_top-box
-      = render partial: "message-unity"
+      = render @messages
     .form
-      .form_textbox
-        .form_textbox_message sample-text
-        .form_textbox_icon.far.fa-image
-      .form_send-button Send
+      = form_for [@group, @message] do |f|
+        = f.text_field :body, class: 'form_textbox', placeholder: 'type a message'
+        = f.label :image, class: 'form_textbox_icon' do
+          = fa_icon 'image', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form_send-button'

@@ -1,0 +1,10 @@
+.group
+  - current_user.groups.each do |group|
+    = link_to group_messages_path(group) do
+      .group_top-box
+      .group_group-name
+        = group.name
+      .group_center-box
+      .group_message
+        = group.show_last_message
+      .group_bottom-box
