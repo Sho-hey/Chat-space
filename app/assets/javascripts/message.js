@@ -1,5 +1,7 @@
-$(function(){
-  $('#new_message').on('Submit', function(){
-    console.log('Hello World');
+$(function() {
+  $('.form').on('submit', function(e) {
+    e.preventDefault();
+    message = $('.form_textbox').val();
+    console.log(message);
   });
 });
