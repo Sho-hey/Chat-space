@@ -12,16 +12,15 @@ $(function() {
   // };
   $('.new_message').submit(function(e) {
     e.preventDefault();
-    console.log("hoge")
-    // var formData = new FormData(this);
-    // var url = $(this).attr('action');
-    // $.ajax({
-    //   url: url,
-    //   type: "POST",
-    //   data: formData,
-    //   processData: false,
-    //   contentType: false
-    // });
+    var formData = new FormData(this);
+    var url = $(this).attr('action');
+    $.ajax({
+      url: url,
+      type: "POST",
+      data: formData,
+      processData: false,
+      contentType: false
+    });
     // .done(function(data) {
     //   var html = buildHTML(data);
     //   $()
