@@ -1,9 +1,7 @@
 $(function(){
   function buildHTML(message){
     var insertImage = '';
-    if (message.image.url) {
-      insertImage = `<img class= "message__image" src="${message.image.url}">`;
-    };
+    message.image.url? insertImage = (`<img class= "message__image" src="${message.image.url}">`) : (insertImage = ``);
     var html = `<div class= "message_user-name">
                 ${message.user_name}</div>
                 <div class= "message__day">
