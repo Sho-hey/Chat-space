@@ -1,16 +1,23 @@
-$(function() {
-  // function buildHTML(message){
+$(function(){
+  function buildHTML(message){
+    var insertImage = '';
+    if (message.image.url) {
+      insertImage = `<img class= "message__image" src="${message.image.url}">`;
+    };
+    var html = `<div class= "message_user-name">
+                ${message.user_name}</div>
+                <div class= "message__day">
+                ${message.created_at}</div>
+                <div class= "message_center-box"></div>
+                <div class= "message_message">
+                  ${message.body}
+                  ${insertImage}
+                  </div>
+                <div class= "message_bottom-box"></div>`
+    return html;
+  };
 
-  //   var html = `<div class= "message">
-  //                 <div class= "message_user-name">
-  //                  ${message.user.name}</div>
-  //                 <div class= "message__day">
-  //                  ${message.created_at}</div>
-  //                 <div class= "message_center-box"></div>
-  //                 <div class= "message_message">
-  //                 <div class= "message.body">`
-  // };
-  $('.new_message').submit(function(e) {
+  $('.new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
@@ -18,33 +25,16 @@ $(function() {
       url: url,
       type: "POST",
       data: formData,
+      dataType: 'json',
       processData: false,
       contentType: false
+    })
+    .done(function(data){
+      var html = buildHTML(data);
+      $(".message").append(html);
+      $(".form_textbox").val('');
+      $(".hidden").val('');
     });
-    // .done(function(data) {
-    //   var html = buildHTML(data);
-    //   $()
-    // })
+    return false;
   });
 });
-
-
-// .message
-//   .message_user-name
-//     = message.user.name
-//   .message__day
-//     = message.created_at
-//   .message_center-box
-//   .message_message
-//     - if message.body.present?
-//       = message.body
-//     = image_tag message.image.url, class: 'message__image' if message.image.present?
-//   .message_bottom-box
-
-
-//   <script>
-// var score = 90;
-// if (score >= 80) {
-// document.write(“合格です！おめでとうございます！”) ;
-// }
-// </script>
