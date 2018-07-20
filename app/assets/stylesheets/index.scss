@@ -39,7 +39,7 @@
     }
     &__group {
       padding: 0px 20px;
-      height: calc(100vh-110px);
+      height: calc(100vh - 110px);
       overflow: scroll;
       .group{
         &_top-box{
@@ -146,7 +146,6 @@
       background-color: gray;
       position: absolute;
       bottom: 0;
-      // position: fixed;
       &_textbox {
         width: 920px;
         height: 50px;

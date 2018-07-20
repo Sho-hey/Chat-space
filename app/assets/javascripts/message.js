@@ -32,9 +32,14 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $(".main").append(html);
+      $('.main').animate({scrollTop: $('.main')[0].scrollHeight}, 'fast');
       $(".form_textbox").val('');
       $(".image").val('');
-    });
+    })
+    .fail(function(data){
+      alert('error');
+    })
     return false;
   });
 });
+
