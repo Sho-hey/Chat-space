@@ -1,0 +1,6 @@
+= form_for [group, message] do |f|
+  = f.text_field :body, class: 'form_textbox', placeholder: 'type a message'
+  = f.label :image, class: 'form_textbox_icon' do
+    = fa_icon 'image', class: 'icon'
+    = f.file_field :image, class: 'image'
+  = f.submit 'Send', class: 'form_send-button'
