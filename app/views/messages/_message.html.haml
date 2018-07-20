@@ -2,7 +2,7 @@
   .message_user-name
     = message.user.name
   .message__day
-    = message.created_at
+    = simple_time(message.created_at)
   .message_center-box
   .message_message
     - if message.body.present?
