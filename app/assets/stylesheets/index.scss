@@ -1,9 +1,9 @@
 .contents{
-  height: calc(100vh - 20px);
+  height: 100vh;
   width: 100vw;
   position: relative;
   .side-bar {
-    height: calc(100vh - 20px);
+    height: 100vh;
     width: 300px;
     background-color: #2f3e51;
     &__user {
@@ -39,7 +39,8 @@
     }
     &__group {
       padding: 0px 20px;
-      height: 100vh;
+      height: calc(100vh - 110px);
+      overflow: scroll;
       .group{
         &_top-box{
           height: 20px;
@@ -62,7 +63,7 @@
     }
   }
   .right-contents {
-    height: calc(100vh - 20px);
+    height: 100vh;
     width: calc(100vw - 300px);
     background-color: #AAAAAA;
     position: absolute;
@@ -103,8 +104,9 @@
     }
     .main {
       width: calc(100vw - 380px);
-      height: 100vh;
-      padding: 0px 40px;
+      height: calc(100vh - 200px);
+      padding: 0px 40px 0px 40px;
+      overflow: scroll;
       &_top-box {
         height: 46px;
       }
@@ -144,7 +146,6 @@
       background-color: gray;
       position: absolute;
       bottom: 0;
-      position: fixed;
       &_textbox {
         width: 920px;
         height: 50px;
@@ -164,7 +165,7 @@
           right: 180px;
           font-size: 20px;
           line-height: 50px;
-          .hidden {
+          .image {
             display: none;
           }
         }
