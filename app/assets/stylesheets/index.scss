@@ -39,7 +39,7 @@
     }
     &__group {
       padding: 0px 20px;
-      height: 100vh;
+      height: calc(100vh-110px);
       overflow: scroll;
       .group{
         &_top-box{
@@ -104,8 +104,8 @@
     }
     .main {
       width: calc(100vw - 380px);
-      height: 100vh;
-      padding: 0px 40px 90px 40px;
+      height: calc(100vh-110px);
+      padding: 0px 40px 0px 40px;
       overflow: scroll;
       &_top-box {
         height: 46px;
@@ -146,7 +146,7 @@
       background-color: gray;
       position: absolute;
       bottom: 0;
-      position: fixed;
+      // position: fixed;
       &_textbox {
         width: 920px;
         height: 50px;
@@ -166,7 +166,7 @@
           right: 180px;
           font-size: 20px;
           line-height: 50px;
-          .hidden {
+          .image {
             display: none;
           }
         }

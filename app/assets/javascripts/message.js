@@ -31,7 +31,7 @@ $(function(){
       var html = buildHTML(data);
       $(".message").append(html);
       $(".form_textbox").val('');
-      $(".hidden").val('');
+      $(".image").val('');
     });
     return false;
   });
