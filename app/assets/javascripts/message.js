@@ -1,8 +1,9 @@
 $(function(){
   function buildHTML(message){
     var insertImage = '';
-    message.image.url? insertImage = (`<img class= "message__image" src="${message.image.url}">`) : (insertImage = ``);
-    var html = `<div class= "message_user-name">
+        message.image.url? insertImage = (`<img class= "message__image" src="${message.image.url}">`) : (insertImage = ``);
+    var html = `<div class= "message">
+                <div class= "message_user-name">
                 ${message.user_name}</div>
                 <div class= "message__day">
                 ${message.created_at}</div>
@@ -11,7 +12,8 @@ $(function(){
                   ${message.body}
                   ${insertImage}
                   </div>
-                <div class= "message_bottom-box"></div>`
+                <div class= "message_bottom-box"></div>
+                <div>`
     return html;
   };
 
@@ -29,7 +31,7 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $(".message").append(html);
+      $(".main").append(html);
       $(".form_textbox").val('');
       $(".image").val('');
     });
