@@ -29,7 +29,7 @@ $(function(){
 
 
   $('.chat-group-form__input').on("keyup", function(){
-    var input = $("#user-search-field").val();
+    var input = $("#user-id-data").val();
 
     $.ajax({
       type: "GET",
@@ -37,7 +37,6 @@ $(function(){
       data: { keyword: input },
       dataType: "json"
     })
-
     .done(function(users) {
       $("#user-search-result").empty();
       if (users.length !== 0) {
@@ -53,14 +52,12 @@ $(function(){
       alert('エラー');
     })
   })
-   $(document).on("click",".user-search-add.chat-group-user__btn.chat-group-user__btn--add", function(){
+   $(document).on("click",".chat-group-user__btn--add", function(){
      var user = $(this);
      appendChatMember(user);
      user.parent().remove();
     });
-   $(document).on("click", ".user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn", function(){
-     var user = $(this);
-     member = user.closest('div');
-     member.remove();
+   $(document).on("click", ".js-remove-btn", function(){
+     var user = $(this).closest('div').remove();;
    })
 });

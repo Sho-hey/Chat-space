@@ -12,14 +12,16 @@
       = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      %label.chat-group-form__label{for: "chat_group_チャットメンバーを追加"} チャットメンバーを追加
+      %label
+      = f.label "チャットメンバーを追加" ,class: "chat-group-form__label"
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
-        %input#user-search-field.chat-group-form__input{placeholder: "追加したいユーザー名を入力してください", type: "text"}
+        = f.text_field :name, class: "chat-group-form__input", placeholder: "追加したいユーザー名を入力してください", type: "text", id: "user-id-data", name: "user-name",value: ""
         #user-search-result
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
+      %label
+      = f.label "チャットメンバー", class: "chat-group-form__label"
     .chat-group-form__field--right
       #user-add-result
   .chat-group-form__field.clearfix
