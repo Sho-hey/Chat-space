@@ -5,7 +5,8 @@
       .header_top-box
       .header_group-name
         = @group.name
-      .header_edit-button Edit
+      .header_edit-button
+        = link_to "Edit", edit_group_path(@group)
       .header_center-box
       .header_member-name
         Member：
