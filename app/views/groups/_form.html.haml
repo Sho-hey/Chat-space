@@ -12,19 +12,23 @@
       = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      %label
       = f.label "チャットメンバーを追加" ,class: "chat-group-form__label"
     .chat-group-form__field--right
-      .chat-group-form__search.clearfix#add-member
-        = f.text_field :name, class: "chat-group-form__input", placeholder: "追加したいユーザー名を入力してください", type: "text", id: "user-id-data", name: "user-name",value: ""
+      .chat-group-form__search.clearfix
+        = f.text_field :name, class: "chat-group-form__input", placeholder: "追加したいユーザー名を入力してください", type: "text", id: "user-id-data", value: ""
         #user-search-result
-  .chat-group-form__field.clearfix#remove-member
+  .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      %label
       = f.label "チャットメンバー", class: "chat-group-form__label"
     .chat-group-form__field--right
       #user-add-result
+        - @group.users.each do |user|
+          .chat-group-user.clearfix
+            %input{name: "group[user_ids][]", type: "hidden", value: "#{user.id}"}
+            %p.chat-group-user__name #{user.name}
+            %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
-      = f.submit class: 'chat-group-form__action-btn'
+      = f.submit "save", class: 'chat-group-form__action-btn'
+

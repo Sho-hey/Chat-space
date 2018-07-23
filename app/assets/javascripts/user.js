@@ -19,7 +19,7 @@ $(function(){
   function appendChatMember(user) {
     var user_name = user.attr("data-user-name");
     var user_id = user.attr("data-user-id");
-    var haml = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+    var haml = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-${user_id}'>
                   <input name='group[user_ids][]' type='hidden' value='${user_id}'>
                   <p class='chat-group-user__name'>${user_name}</p>
                   <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn data-user-id="${user_id}"'>削除</a>
@@ -52,11 +52,11 @@ $(function(){
       alert('エラー');
     })
   })
-   $("#add-member").on("click",".chat-group-user__btn--add", function(){
+   $("#user-search-result").on("click",".chat-group-user__btn--add", function(){
      appendChatMember($(this));
      $(this).parent().remove();
     });
-   $("#remove-member").on("click", ".js-remove-btn", function(){
+   $("#user-add-result").on("click", ".js-remove-btn", function(){
      $(this).closest('div').remove();;
    })
 });
