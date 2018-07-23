@@ -28,7 +28,7 @@ $(function(){
   }
 
 
-  $('.chat-group-form__input').on("keyup", function(){
+  $('#user-id-data').on("keyup", function(){
     var input = $("#user-id-data").val();
 
     $.ajax({
@@ -52,12 +52,11 @@ $(function(){
       alert('エラー');
     })
   })
-   $(document).on("click",".chat-group-user__btn--add", function(){
-     var user = $(this);
-     appendChatMember(user);
-     user.parent().remove();
+   $("#add-member").on("click",".chat-group-user__btn--add", function(){
+     appendChatMember($(this));
+     $(this).parent().remove();
     });
-   $(document).on("click", ".js-remove-btn", function(){
-     var user = $(this).closest('div').remove();;
+   $("#remove-member").on("click", ".js-remove-btn", function(){
+    $(this).closest('div').remove();;
    })
 });
