@@ -57,6 +57,6 @@ $(function(){
      $(this).parent().remove();
     });
    $("#remove-member").on("click", ".js-remove-btn", function(){
-    $(this).closest('div').remove();;
+     $(this).closest('div').remove();;
    })
 });
