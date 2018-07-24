@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     var insertImage = '';
         message.image.url? insertImage = (`<img class= "message__image" src="${message.image.url}">`) : (insertImage = ``);
-    var html = `<div class= "message">
+    var html = `<div class= "message{ "data-message-id": "${message.id}""}>
                 <div class= "message_user-name">
                 ${message.user_name}</div>
                 <div class= "message__day">
@@ -46,15 +46,21 @@ $(function(){
       url: location.href.json,
     })
     .done(function(data) {
+      var id = $(".message").data("messageID");
       var insertHTML = "";
       json.messages.forEach(function(message) {
-        insertHTML += buildHTML(message);
+        if (message.id > id) {
+          insertHTML += buildHTML(message);
+        }
       });
-      $("#message-all").html(insertHTML);
+      $("#message-all").prepend(insertHTML);
     })
     .fail(function(data) {
       alert("自動更新に失敗しました");
     });
-  });
+  } else {
+    clearInterval(interval);
+   }
+   , 5000 );
 });
 
