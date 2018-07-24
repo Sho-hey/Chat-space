@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
     var insertImage = '';
-        message.image.url? insertImage = (`<img class= "message__image" src="${message.image.url}">`) : (insertImage = ``);
+        message.image? insertImage = (`<img class= "message__image" src="${message.image}">`) : (insertImage = ``);
     var html = `<div class= "message" data-message-id = "${message.id}">
                 <div class= "message_user-name">
                 ${message.user_name}</div>
@@ -42,9 +42,9 @@ $(function(){
     return false;
   });
   var interval = setInterval(function(){
-    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+    if (window.location.pathname.match(/\/groups\/\d+\/messages/)) {
       $.ajax({
-        url: location.href,
+        url: location.pathname,
         type: "GET",
         dataType: "json",
         processData: false,
@@ -58,7 +58,7 @@ $(function(){
           insertHTML += buildHTML(message);
         }
       });
-      $("#message-all").prepend(insertHTML);
+      $("#message-all").append(insertHTML);
     })
     .fail(function(data) {
       alert("自動更新に失敗しました");
@@ -66,6 +66,6 @@ $(function(){
   } else {
     clearInterval(interval);
    }}
-   , 5 * 1000 );
+   , 5000 );
 });
 

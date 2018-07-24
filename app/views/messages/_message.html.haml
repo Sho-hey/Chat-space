@@ -1,4 +1,4 @@
-.message{ "data-message-id": "#{message.id}"}
+.message{ "data-message-id": message.id}
   .message_user-name
     = message.user.name
   .message__day
@@ -7,5 +7,5 @@
   .message_message
     - if message.body.present?
       = message.body
-    = image_tag message.image.url, class: 'message__image' if message.image.present?
+    = image_tag message.image, class: 'message__image' if message.image.present?
   .message_bottom-box
