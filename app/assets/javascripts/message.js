@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     var insertImage = '';
         message.image.url? insertImage = (`<img class= "message__image" src="${message.image.url}">`) : (insertImage = ``);
-    var html = `<div class= "message{ "data-message-id": "${message.id}""}>
+    var html = `<div class= "message" data-message-id = "${message.id}">
                 <div class= "message_user-name">
                 ${message.user_name}</div>
                 <div class= "message__day">
@@ -41,14 +41,19 @@ $(function(){
     })
     return false;
   });
-  setInterval(function(){
-    $.ajax({
-      url: location.href.json,
+  var interval = setInterval(function(){
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+      $.ajax({
+        url: location.href,
+        type: "GET",
+        dataType: "json",
+        processData: false,
+        contentType: false
     })
     .done(function(data) {
-      var id = $(".message").data("messageID");
+      var id = $(".message").last().data("messageId");
       var insertHTML = "";
-      json.messages.forEach(function(message) {
+      data.messages.forEach(function(message) {
         if (message.id > id) {
           insertHTML += buildHTML(message);
         }
@@ -60,7 +65,7 @@ $(function(){
     });
   } else {
     clearInterval(interval);
-   }
-   , 5000 );
+   }}
+   , 5 * 1000 );
 });
 
