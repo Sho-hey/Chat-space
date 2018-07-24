@@ -41,5 +41,20 @@ $(function(){
     })
     return false;
   });
+  setInterval(function(){
+    $.ajax({
+      url: location.href.json,
+    })
+    .done(function(data) {
+      var insertHTML = "";
+      json.messages.forEach(function(message) {
+        insertHTML += buildHTML(message);
+      });
+      $("#message-all").html(insertHTML);
+    })
+    .fail(function(data) {
+      alert("自動更新に失敗しました");
+    });
+  });
 });
 
