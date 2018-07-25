@@ -13,6 +13,7 @@
         = @users.pluck(:name).join(", ")
     .main
       .main_top-box
-      = render @messages
+      #message-all
+        = render @messages
     .form
       = render "form", {group: @group, message: @message}
