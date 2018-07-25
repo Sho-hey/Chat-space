@@ -17,7 +17,11 @@ $(function(){
     return html;
   };
 
-  $('.new_message').on('submit', function(e){
+  function scroll(){
+    $('.main').animate({scrollTop: $('.main')[0].scrollHeight}, 'fast');
+  };
+
+  $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
@@ -31,8 +35,8 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $(".main").append(html);
-      $('.main').animate({scrollTop: $('.main')[0].scrollHeight}, 'fast');
+      $("#message-all").append(html);
+      scroll();
       $(".form_textbox").val('');
       $(".image").val('');
     })
@@ -41,31 +45,31 @@ $(function(){
     })
     return false;
   });
-  var interval = setInterval(function(){
+  var interval = setInterval(function() {
     if (window.location.pathname.match(/\/groups\/\d+\/messages/)) {
+      var last_message_id = $(".message").last().data("messageId");
+      console.log(last_message_id)
       $.ajax({
         url: location.pathname,
         type: "GET",
         dataType: "json",
-        processData: false,
-        contentType: false
-    })
+        data: { id: last_message_id }
+      })
     .done(function(data) {
-      var id = $(".message").last().data("messageId");
+      console.log(data);
       var insertHTML = "";
-      data.messages.forEach(function(message) {
-        if (message.id > id) {
-          insertHTML += buildHTML(message);
-        }
+      data.forEach(function(message) {
+        insertHTML = buildHTML(message);
+        $("#message-all").append(insertHTML);
+        scroll();
       });
-      $("#message-all").append(insertHTML);
-    })
-    .fail(function(data) {
+      })
+       .fail(function(data) {
       alert("自動更新に失敗しました");
-    });
-  } else {
+    })
+   }
+   else {
     clearInterval(interval);
    }}
    , 5000 );
 });
-
