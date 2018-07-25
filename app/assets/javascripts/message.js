@@ -48,7 +48,6 @@ $(function(){
   var interval = setInterval(function() {
     if (window.location.pathname.match(/\/groups\/\d+\/messages/)) {
       var last_message_id = $(".message").last().data("messageId");
-      console.log(last_message_id)
       $.ajax({
         url: location.pathname,
         type: "GET",
@@ -56,7 +55,6 @@ $(function(){
         data: { id: last_message_id }
       })
     .done(function(data) {
-      console.log(data);
       var insertHTML = "";
       data.forEach(function(message) {
         insertHTML = buildHTML(message);
