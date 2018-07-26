@@ -63,3 +63,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-rails'
 gem 'jquery-turbolinks'
+
+group :production do
+  gem "unicorn"
+end
