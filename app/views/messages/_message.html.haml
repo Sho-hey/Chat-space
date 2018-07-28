@@ -5,7 +5,8 @@
     = simple_time(message.created_at)
   .message_center-box
   .message_message
-    - if message.body.present?
-      = message.body
-    = image_tag message.image, class: 'message__image' if message.image.present?
+    .message_message-text
+      - if message.body.present?
+        = message.body
+    = image_tag message.image, class: 'message_message-image' if message.image.present?
   .message_bottom-box

@@ -127,9 +127,11 @@
           height: 10px;
         }
         &_message {
-          font-size: 14px;
-          color: $chat-font-color;
-          .message__image{
+          &-text {
+            font-size: 14px;
+            color: $chat-font-color;
+          }
+          &-image{
             height: 200px;
             width: 200px;
           }

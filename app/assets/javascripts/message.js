@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
     var insertImage = '';
-        message.image? insertImage = (`<img class= "message__image" src="${message.image}">`) : (insertImage = ``);
+        message.image? insertImage = (`<img class= "message_message-image" src="${message.image}">`) : (insertImage = ``);
     var html = `<div class= "message" data-message-id = "${message.id}">
                 <div class= "message_user-name">
                 ${message.user_name}</div>
@@ -9,9 +9,10 @@ $(function(){
                 ${message.created_at}</div>
                 <div class= "message_center-box"></div>
                 <div class= "message_message">
-                  ${message.body}
+                  <div class= "message_message-text">
+                    ${message.body}</div>
                   ${insertImage}
-                  </div>
+                </div>
                 <div class= "message_bottom-box"></div>
                 <div>`
     return html;
