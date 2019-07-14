@@ -26,26 +26,33 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    })
-    .done(function(data){
-      var html = buildHTML(data);
-      $("#message-all").append(html);
-      scroll();
-      $(".form_textbox").val('');
-      $(".image").val('');
-    })
-    .fail(function(data){
-      alert('error');
-    })
-    return false;
+    var formDataVal = $('.form_textbox').val();
+    if(formDataVal.length == 0){
+      alert("テキストを入力してください");
+    }else{
+      $.ajax({
+        url: url,
+        type: "POST",
+        data: formData,
+        dataType: 'json',
+        processData: false,
+        contentType: false
+      })
+      .done(function(data){
+        var html = buildHTML(data);
+        $("#message-all").append(html);
+        scroll();
+        $(".form_textbox").val('');
+        $(".image").val('');
+      })
+      .fail(function(data){
+        alert('error');
+      })
+    }
+    $(".form_send-button").prop('disabled', false);
   });
+
+
   var interval = setInterval(function() {
     if (window.location.pathname.match(/\/groups\/\d+\/messages/)) {
       var last_message_id = $(".message").last().data("messageId");
